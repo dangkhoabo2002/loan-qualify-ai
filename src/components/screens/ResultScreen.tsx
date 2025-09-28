@@ -122,7 +122,7 @@ export const ResultScreen: React.FC<ResultScreenProps> = ({ result, onBack }) =>
           </Button>
         ) : (
           <Button className="w-full gradient-primary text-white font-medium py-6 text-base rounded-xl shadow-medium hover:shadow-large transition-all duration-200">
-            Get Pre-Approval Tips
+            Back to home
           </Button>
         )}
         
@@ -131,7 +131,7 @@ export const ResultScreen: React.FC<ResultScreenProps> = ({ result, onBack }) =>
           className="w-full py-6 text-base rounded-xl"
           onClick={onBack}
         >
-          Check Another ID
+          Contact to Banker
         </Button>
       </div>
 

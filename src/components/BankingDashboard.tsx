@@ -93,17 +93,17 @@ const BankingDashboard = () => {
   return (
     <div className="mobile-container">
       {/* Header */}
-      <div className="bg-gradient-primary text-white p-4 pb-8">
+      <div className="bg-gradient-primary text-black p-4 pb-8">
         <div className="flex items-center justify-between mb-6 pt-8">
           <div>
-            <h1 className="text-2xl font-bold">VietBank</h1>
-            <p className="text-white/80 text-sm">Digital Banking Services</p>
+            <h1 className="text-2xl font-bold">A BANK</h1>
+            <p className="text-black/80 text-sm">Digital Banking Services</p>
           </div>
           <div className="flex space-x-3">
-            <Button variant="ghost" size="sm" className="text-white hover:bg-white/10 p-2 rounded-full">
+            <Button variant="ghost" size="sm" className="text-black hover:bg-white/10 p-2 rounded-full">
               <Bell className="w-5 h-5" />
             </Button>
-            <Button variant="ghost" size="sm" className="text-white hover:bg-white/10 p-2 rounded-full">
+            <Button variant="ghost" size="sm" className="text-black hover:bg-white/10 p-2 rounded-full">
               <Settings className="w-5 h-5" />
             </Button>
           </div>
@@ -112,7 +112,7 @@ const BankingDashboard = () => {
         {/* Quick Stats */}
         <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4">
           <h2 className="text-lg font-semibold mb-2">Welcome back!</h2>
-          <p className="text-white/80 text-sm">
+          <p className="text-black/80 text-sm">
             Complete your banking needs with our digital services
           </p>
         </div>
