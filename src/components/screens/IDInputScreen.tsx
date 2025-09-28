@@ -17,11 +17,6 @@ export const IDInputScreen: React.FC<IDInputScreenProps> = ({ onSubmit, onBack }
     // Vietnamese CMND: 9 digits, CCCD: 12 digits
     const cleanId = id.replace(/\s/g, '');
     
-    // Check if all digits are 2 (error case)
-    if (/^2+$/.test(cleanId)) {
-      return false;
-    }
-    
     return cleanId.length === 9 || cleanId.length === 12;
   };
 
@@ -50,11 +45,6 @@ export const IDInputScreen: React.FC<IDInputScreenProps> = ({ onSubmit, onBack }
     
     if (!cleanId) {
       setError('Please enter your National ID');
-      return;
-    }
-    
-    if (/^2+$/.test(cleanId)) {
-      setError('Invalid National ID format. Please check your ID number and try again.');
       return;
     }
     

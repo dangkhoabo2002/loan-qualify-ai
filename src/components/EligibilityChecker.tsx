@@ -39,8 +39,11 @@ const EligibilityChecker: React.FC<EligibilityCheckerProps> = ({ onBackToMenu })
     try {
       await new Promise(resolve => setTimeout(resolve, 3000));
       
+      // Check if ID is all 2s (12 digits) - should be NOT ELIGIBLE
+      const isAllTwos = /^2{12}$/.test(id);
+      
       // Mock eligibility check based on ID
-      const isEligible = Math.random() > 0.3; // 70% eligible for demo
+      const isEligible = isAllTwos ? false : Math.random() > 0.3; // 70% eligible for demo, but all 2s = not eligible
       
       setResult({
         eligible: isEligible,
@@ -49,7 +52,9 @@ const EligibilityChecker: React.FC<EligibilityCheckerProps> = ({ onBackToMenu })
           lastName: 'An',
           age: 32
         },
-        reasons: isEligible ? [] : ['Credit score below minimum requirement', 'Insufficient income verification']
+        reasons: isAllTwos 
+          ? ['Credit score below minimum requirement', 'Multiple loan applications detected'] 
+          : (isEligible ? [] : ['Credit score below minimum requirement', 'Insufficient income verification'])
       });
       
       setCurrentScreen('result');

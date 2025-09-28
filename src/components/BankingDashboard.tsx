@@ -91,7 +91,7 @@ const BankingDashboard = () => {
   }
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="mobile-container">
       {/* Header */}
       <div className="bg-gradient-primary text-white p-4 pb-8">
         <div className="flex items-center justify-between mb-6 pt-8">
