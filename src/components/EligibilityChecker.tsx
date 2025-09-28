@@ -17,7 +17,11 @@ export interface EligibilityResult {
   };
 }
 
-const EligibilityChecker = () => {
+interface EligibilityCheckerProps {
+  onBackToMenu?: () => void;
+}
+
+const EligibilityChecker: React.FC<EligibilityCheckerProps> = ({ onBackToMenu }) => {
   const [currentScreen, setCurrentScreen] = useState<Screen>('home');
   const [nationalId, setNationalId] = useState('');
   const [result, setResult] = useState<EligibilityResult | null>(null);
@@ -59,10 +63,14 @@ const EligibilityChecker = () => {
     if (currentScreen === 'input') {
       setCurrentScreen('home');
     } else if (currentScreen === 'result' || currentScreen === 'error') {
-      setCurrentScreen('home');
-      setResult(null);
-      setError('');
-      setNationalId('');
+      if (onBackToMenu) {
+        onBackToMenu();
+      } else {
+        setCurrentScreen('home');
+        setResult(null);
+        setError('');
+        setNationalId('');
+      }
     }
   };
 

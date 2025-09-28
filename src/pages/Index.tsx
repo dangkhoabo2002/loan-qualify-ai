@@ -1,7 +1,7 @@
-import EligibilityChecker from "../components/EligibilityChecker";
+import BankingDashboard from "../components/BankingDashboard";
 
 const Index = () => {
-  return <EligibilityChecker />;
+  return <BankingDashboard />;
 };
 
 export default Index;
